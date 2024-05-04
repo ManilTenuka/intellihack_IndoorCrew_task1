@@ -3,7 +3,7 @@ from sklearn.preprocessing import LabelEncoder, StandardScaler
 from sklearn.model_selection import train_test_split
 
 def load_data(file_path):
-    """Load the dataset from the given file path."""
+ 
     try:
         data = pd.read_csv(file_path)
     except FileNotFoundError:
@@ -12,7 +12,7 @@ def load_data(file_path):
     return data
 
 def preprocess_data(data):
-    """Preprocess the data by handling missing values and encoding categorical variables."""
+
     # Impute missing values
     for col in data.columns:
         if data[col].dtype == "object":
