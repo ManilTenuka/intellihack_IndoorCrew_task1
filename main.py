@@ -9,7 +9,7 @@ def main():
     file_path = 'data/Crop_Dataset.csv'
     data = load_data(file_path)
 
-    # The 'Label' column should be stored before it's transformed or dropped.
+
     unique_labels = np.unique(data['Label'])
 
     X, y = preprocess_data(data)
@@ -24,7 +24,7 @@ def main():
     accuracy = accuracy_score(y_test, predictions)
     print(f'Model Accuracy: {accuracy:.2f}')
 
-    # Find the top three most frequently predicted crop types
+    # Find the top three crop types
     predicted_labels = [unique_labels[pred] for pred in predictions]
     top_three_crops = [item for item, count in Counter(predicted_labels).most_common(3)]
 
